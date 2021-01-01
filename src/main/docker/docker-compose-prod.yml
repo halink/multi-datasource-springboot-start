@@ -1,0 +1,14 @@
+version: "2.4"
+services:
+  app:
+    container_name: multi-datasource-springboot-start
+    build: ./
+    image: halink/multi-datasource-springboot-start:0.0.1
+    ports:
+      - 7070:8080
+      - 7007:5005
+    volumes:
+      - /Users/lsc/Desktop/multi-datasource-springboot-start/logs:/work/project/logs
+      - /Users/lsc/Desktop/multi-datasource-springboot-start/config:/work/project/config
+    command: java -jar multi-datasource-springboot-start.jar
+    restart: always
